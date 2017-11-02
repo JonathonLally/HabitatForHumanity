@@ -1,4 +1,4 @@
-package view;
+package main;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -12,9 +12,9 @@ public class MainView extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			Parent root = FXMLLoader.load(getClass().getResource("MainViewFX.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("/view/MainViewFX.fxml"));
 			Scene scene = new Scene(root);
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			scene.getStylesheets().add(getClass().getResource("/view/material-fx-v0_3.css").toExternalForm());
 			primaryStage.setTitle("ParkingLotApp");
 			primaryStage.setScene(scene);
 			primaryStage.show();
