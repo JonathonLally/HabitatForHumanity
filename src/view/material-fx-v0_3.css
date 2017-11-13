@@ -49,7 +49,7 @@
 	-fx-text-control-title-color: rgb(130.0, 130.0, 130.0);
 	-fx-text-fill: -fx-text-base-color;
 	-dark: rgb(47.0, 52.0, 57.0);
-	-fx-background-color: -dark;
+	-fx-background-color:  #f7fbfc;
 	/*default font */
 	-fx-font-family: 'Roboto Medium';
 	-fx-font-size: 14.0px;
@@ -744,7 +744,7 @@
 	-fx-background-color: -swatch-toolbar;
 	-fx-border-width: 0 0 2 0;
 	-fx-border-color: -swatch-grey;
-	-fx-min-height: 48;
+	-fx-min-height: 20;
 	-fx-alignment: CENTER_LEFT;
 }
 

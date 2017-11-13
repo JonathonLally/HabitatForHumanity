@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <left>
+      <VBox prefHeight="675.0" prefWidth="135.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Doors">
+               <VBox.margin>
+                  <Insets left="15.0" top="50.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Windows">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="15.0" top="20.0" />
+               </VBox.margin>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Furniture">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="15.0" top="20.0" />
+               </VBox.margin>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Chairs">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="15.0" top="20.0" />
+               </VBox.margin>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Beds">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="15.0" top="20.0" />
+               </VBox.margin>
+            </Text>
+         </children>
+      </VBox>
+   </left>
+   <right>
+      <ImageView fitHeight="400.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+         <image>
+            <Image url="@../../../../Desktop/door.jpg" />
+         </image>
+         <BorderPane.margin>
+            <Insets right="25.0" />
+         </BorderPane.margin>
+      </ImageView>
+   </right>
+   <bottom>
+      <ToolBar prefHeight="40.0" prefWidth="1280.0" BorderPane.alignment="CENTER">
+        <items>
+            <Pane prefHeight="40.0" prefWidth="250.0" />
+            <Button alignment="CENTER" mnemonicParsing="false" text="Button" textAlignment="CENTER">
+               <padding>
+                  <Insets left="5.0" right="5.0" />
+               </padding>
+            </Button>
+          <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Home" textAlignment="CENTER">
+               <padding>
+                  <Insets left="5.0" right="5.0" />
+               </padding>
+            </Button>
+            <Button alignment="CENTER" mnemonicParsing="false" text="Button" textAlignment="CENTER">
+               <padding>
+                  <Insets left="5.0" right="5.0" />
+               </padding>
+            </Button>
+            <Button alignment="CENTER" mnemonicParsing="false" text="Button" textAlignment="CENTER">
+               <padding>
+                  <Insets left="5.0" right="5.0" />
+               </padding>
+            </Button>
+        </items>
+         <opaqueInsets>
+            <Insets left="25.0" right="25.0" />
+         </opaqueInsets>
+         <BorderPane.margin>
+            <Insets left="250.0" right="250.0" />
+         </BorderPane.margin>
+      </ToolBar>
+   </bottom>
+</BorderPane>

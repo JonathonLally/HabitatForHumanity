@@ -15,7 +15,7 @@ public class MainView extends Application {
 			Parent root = FXMLLoader.load(getClass().getResource("/view/MainViewFX.fxml"));
 			Scene scene = new Scene(root);
 			scene.getStylesheets().add(getClass().getResource("/view/material-fx-v0_3.css").toExternalForm());
-			primaryStage.setTitle("ParkingLotApp");
+			primaryStage.setTitle("Habitat for Humanity App");
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch(Exception e) {
