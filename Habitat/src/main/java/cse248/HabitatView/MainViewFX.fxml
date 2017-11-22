@@ -24,6 +24,7 @@
                </font>
             </Text>
             <Button layoutX="174.0" layoutY="504.0" mnemonicParsing="false" onAction="#launchCustomerViewFXML" text="TEST CUSTOMER" />
+            <Button layoutX="318.0" layoutY="504.0" mnemonicParsing="false" onAction="#connectToDBFXML" text="Connect to DB" />
          </children>
       </Pane>
    </children>
