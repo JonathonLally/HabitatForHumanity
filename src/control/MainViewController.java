@@ -1,4 +1,4 @@
-package cse248.HabitatController;
+package control;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

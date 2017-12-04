@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: #f7fbfc; -fx-border-color: #f7fbfc;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.MainViewController">
+   <children>
+      <Pane layoutX="25.0" layoutY="25.0" opacity="0.9" prefHeight="550.0" prefWidth="450.0" style="-fx-background-color: #f7fbfc; -fx-border-color: #f7fbfc;">
+         <children>
+            <TextField fx:id="user_textfield" layoutX="137.0" layoutY="339.0" onAction="#user_login" prefHeight="25.0" prefWidth="175.0" promptText="user" />
+            <PasswordField fx:id="password_passfield" layoutX="137.0" layoutY="397.0" onAction="#user_login" prefHeight="25.0" prefWidth="175.0" promptText="password" />
+            <ImageView fitHeight="278.0" fitWidth="333.0" layoutX="58.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/Habitat-favicon1.png" />
+               </image>
+            </ImageView>
+            <Text fx:id="invalid_text" fill="#9a3333" layoutX="224.0" layoutY="463.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" ">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Text>
+            <Button layoutX="109.0" layoutY="504.0" mnemonicParsing="false" onAction="#launchCustomerViewFXML" text="TEST CUSTOMER" />
+            <Button layoutX="318.0" layoutY="504.0" mnemonicParsing="false" onAction="#connectToDBFXML" text="Connect to DB" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
