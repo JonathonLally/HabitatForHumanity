@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.ManagerViewController">
    <children>
       <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="640.0">
         <menus>
@@ -38,10 +39,43 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Edit Inventory" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sales Report" GridPane.columnIndex="1" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sell" GridPane.rowIndex="1" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Add Users" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets bottom="200.0" />
+               </GridPane.margin></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Remove Items" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets bottom="200.0" />
+               </GridPane.margin></Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="History" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets bottom="200.0" />
+               </GridPane.margin></Text>
+            <ImageView fitHeight="150.0" fitWidth="200.0" onMouseClicked="#launchAddUser" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <image>
+                  <Image url="@../../resources/adduser.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="200.0" onMouseClicked="#launchAddItem" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <image>
+                  <Image url="@../../resources/additem.png" />
+               </image>
+            </ImageView>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Add Items" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets bottom="200.0" />
+               </GridPane.margin>
+            </Text>
+            <ImageView fitHeight="150.0" fitWidth="200.0" onMouseClicked="#launchRemoveItem" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <image>
+                  <Image url="@../../resources/removeitem.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="200.0" onMouseClicked="#launchHistory" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <image>
+                  <Image url="@../../resources/history.png" />
+               </image>
+            </ImageView>
          </children>
       </GridPane>
    </children>

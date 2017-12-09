@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.UsersViewController">
+   <children>
+      <TableView layoutX="346.0" layoutY="-66.0" prefHeight="334.0" prefWidth="225.0">
+        <columns>
+          <TableColumn fx:id="userCol" prefWidth="75.0" text="Username" />
+          <TableColumn fx:id="userPass" prefWidth="75.0" text="Password" />
+            <TableColumn fx:id="userType" prefWidth="75.0" text="Type" />
+        </columns>
+      </TableView>
+      <Text layoutX="118.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Userlist">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Button fx:id="addButton" layoutX="92.0" layoutY="461.0" mnemonicParsing="false" text="Add" />
+      <TextField fx:id="username_field" layoutX="14.0" layoutY="416.0" prefHeight="25.0" prefWidth="74.0" text="username" />
+      <TextField fx:id="userpass_field" layoutX="118.0" layoutY="416.0" prefHeight="25.0" prefWidth="65.0" text="password" />
+      <Button fx:id="removeButton" layoutX="157.0" layoutY="461.0" mnemonicParsing="false" text="Remove" />
+      <ChoiceBox fx:id="choicebox" layoutX="200.0" layoutY="416.0" prefHeight="25.0" prefWidth="86.0" />
+      <TextArea layoutX="193.0" layoutY="93.0" prefHeight="300.0" prefWidth="86.0" />
+      <TextArea layoutX="107.0" layoutY="93.0" prefHeight="300.0" prefWidth="86.0" />
+      <TextArea layoutX="21.0" layoutY="93.0" prefHeight="300.0" prefWidth="86.0" />
+      <Text layoutX="53.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text layoutX="139.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text layoutX="225.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+   </children>
+</AnchorPane>
