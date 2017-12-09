@@ -149,7 +149,7 @@ public class MainViewController {
 	public void launchCustomerView() { // Launch Customer Window
 		try {
 			Stage secondaryStage = new Stage();
-			Parent root = FXMLLoader.load(getClass().getResource("/view/CustomerViewFX.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("/view/InventoryViewFX.fxml"));
 			Scene scene = new Scene(root);
 			scene.getStylesheets().add(getClass().getResource("/view/material-fx-v0_3.css").toExternalForm());
 			secondaryStage.setTitle("CustomerView");

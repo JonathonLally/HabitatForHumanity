@@ -2,30 +2,24 @@ package control;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
 import javafx.application.Application;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 public class UsersViewController extends Application{
 	
-	@FXML
-	private TableView<String> tableview;
-	
-	@FXML TableColumn<String, String> userCol;
-	@FXML TableColumn<String, String> userPass;
-	@FXML TableColumn<?, ?> userType;
+	@FXML private TextArea usernameArea;
+	@FXML private TextArea userpassArea;
+	@FXML private TextArea usertypeArea;
 	
 	@FXML
 	private Button addButton;
@@ -42,15 +36,26 @@ public class UsersViewController extends Application{
 	@FXML
 	private ChoiceBox<String> choicebox;
 	
+	@FXML
+	void addUserFXML() {
+		checkInput();
+		connectDB();
+		buildTable();
+		disconnectDB();
+		
+	}
+	@FXML void removeUserFXML() {
+		removeUser(getUserName());
+	}
+	
 	private Connection con;
-	private ObservableList<String> row;
+	private StringBuilder users;
+	private StringBuilder pass;
+	private StringBuilder types;
 
 	@Override
 	public void start(Stage arg0) throws Exception {
-		// TODO Auto-generated method stub
-	//	connectDB();
-		//setupChoiceBox();
-		//con.close();
+	
 	}
 	
 	public void connectDB() {
@@ -74,9 +79,90 @@ public class UsersViewController extends Application{
 	public void initialize() {
 		connectDB();
 		setupChoiceBox();
-		//buildColumns();
 		buildTable();
-		buildColumns();
+		disconnectDB();
+	}
+	
+	public String getUserName() {
+		String user;
+		user = username_field.getText();
+		username_field.clear();
+		return user;
+	}
+	
+	public String getUserPass() {
+		String pass;
+		pass = userpass_field.getText();
+		userpass_field.clear();
+		return pass;
+	}
+	
+	public int getUserType() {
+		if (choicebox.getValue().equals("Customer")) {
+			return 1;
+		} else if (choicebox.getValue().equals("Employee")) {
+			return 2;
+		} else if (choicebox.getValue().equals("Manager")) {
+			return 3;
+		} else {
+			return 0;
+		}
+	}
+	
+	public void checkInput() {  //Check if the new user input fields have valid types
+		String newuser = getUserName();
+		String newpass = getUserPass();
+		int newType = getUserType();
+		if (newuser != null) {
+			if (newpass != null) {
+				if (newType > 0) {
+					addUser(newuser, newpass, newType);
+				} else {
+					System.out.println("No valid user type");
+				}
+			} else {
+				System.out.println("Password field empty");
+			}
+		} else {
+			System.out.println("Userfield empty");
+		}
+	}
+	
+	public void addUser(String user, String pass, int type) {
+		connectDB();
+		try {
+			Statement stmt = con.createStatement();
+			System.out.println("Attempting to add : " + user + " " + pass + " " + type);			
+			String sql = "INSERT INTO habitatsql.users"
+					+ "(user_name, user_password, user_type)" + " VALUES('" +
+					user + "','" + pass + "'," + type + ")";
+			stmt.executeUpdate(sql);
+		} catch (Exception e) {
+			
+		}
+		disconnectDB();
+	}
+	
+	public void removeUser(String user) {
+		connectDB();
+		try {
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery("select * from users");
+			while(rs.next()) {
+				String dbuser = rs.getString("user_name");
+				if (user.equals(dbuser)) {					
+					System.out.println("Found : " + user +"Attempting to remove");				
+					PreparedStatement st = con.prepareStatement("DELETE FROM users WHERE user_name = ?");
+					st.setString(1, user);
+					st.executeUpdate();
+				} else {
+					System.out.println("User not found, cannot remove");
+				}
+			}
+		} catch (Exception e) {
+			
+		}
+		buildTable();
 		disconnectDB();
 	}
 	
@@ -90,21 +176,27 @@ public class UsersViewController extends Application{
 		try {
 			Statement stmt = con.createStatement();
 			ResultSet rs = stmt.executeQuery("select * from users");
-			//System.out.println(rs);
+			users = new StringBuilder();
+			pass = new StringBuilder();
+			types = new StringBuilder();
 			while(rs.next()) {
 				System.out.println(rs.getString("user_name"));				
-				row.add(rs.getString("user_name"));
+				users.append(rs.getString("user_name") + "\n");
+				pass.append(rs.getString("user_password") + "\n");
+				if (rs.getString("user_type").equals("1")) {
+					types.append("Customer" + "\n");
+				} else if (rs.getString("user_type").equals("2")) {
+					types.append("Employee" + "\n");
+				} else if (rs.getString("user_type").equals("3")) {
+					types.append("Manager" + "\n");
+				}				
 			}
+			usernameArea.setText(users.toString());
+			userpassArea.setText(pass.toString());
+			usertypeArea.setText(types.toString());
 			
 		} catch (SQLException e) {
 			System.out.println("Something wrong with building table from sql");
 		}
 	}
-	
-	public void buildColumns() {
-		userCol.setCellValueFactory(
-				new PropertyValueFactory<String, String>("user_name"));
-		tableview.setItems(row);
-	}
-
 }
