@@ -1,8 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
+<AnchorPane prefHeight="500.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.AddItemViewController">
+   <children>
+      <Text layoutX="137.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Inventory">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="89.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="84.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Picture">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="71.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dimensions">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="89.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="72.0" layoutY="349.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="80.0" layoutY="306.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Material">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Button layoutX="149.0" layoutY="449.0" mnemonicParsing="false" onAction="#addButton" prefHeight="25.0" prefWidth="78.0" text="Add" />
+      <ChoiceBox fx:id="choicebox" layoutX="187.0" layoutY="90.0" prefWidth="150.0" />
+      <TextField fx:id="dimField" layoutX="188.0" layoutY="194.0" />
+      <TextField fx:id="priceField" layoutX="188.0" layoutY="247.0" />
+      <TextField fx:id="matField" layoutX="188.0" layoutY="289.0" />
+      <TextArea fx:id="descriptionArea" layoutX="184.0" layoutY="337.0" prefHeight="86.0" prefWidth="150.0" />
+      <TextField fx:id="pictureField" layoutX="188.0" layoutY="141.0" />
+   </children>
 </AnchorPane>
-

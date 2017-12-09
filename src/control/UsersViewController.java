@@ -137,6 +137,7 @@ public class UsersViewController extends Application{
 					+ "(user_name, user_password, user_type)" + " VALUES('" +
 					user + "','" + pass + "'," + type + ")";
 			stmt.executeUpdate(sql);
+			System.out.println(sql);
 		} catch (Exception e) {
 			
 		}
