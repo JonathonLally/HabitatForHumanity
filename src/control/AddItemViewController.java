@@ -55,7 +55,6 @@ public class AddItemViewController extends Application{
 	}
 	
 	private void savePicture(File file) {
-		System.out.println(file.getPath());
 		setPictureField(file.getPath());
 		try {
 			
@@ -69,7 +68,7 @@ public class AddItemViewController extends Application{
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/habitatsql", "root", "U3Z3aacoskOO55ndVAOf");
-			System.out.println("User View Connected to DB");
+			System.out.println("AddItemView Connected to DB");
 		} catch (Exception e) {
 			System.out.println(e);
 		}
@@ -90,7 +89,6 @@ public class AddItemViewController extends Application{
 	}
 	
 	public void addInventory() {
-		System.out.println("Starting add Inventory");
 		connectDB();
 		String invtype = getChoiceBox();
 		String invpicture = getPictureField();
@@ -99,13 +97,12 @@ public class AddItemViewController extends Application{
 		String invdescription = getDescription();
 		String invmaterial = getMatField();
 		try {			
-			System.out.println(invtype+invpicture+invdimensions+invprice+invdescription+invmaterial);
 			Statement stmt = con.createStatement();
 			String sql = "INSERT INTO habitatsql.inventory"
 					+ "(inv_type, inv_picture, inv_dimensions, inv_price, inv_description, inv_material"
 					+ ") VALUES('" + invtype + "','" + invpicture + "','" + invdimensions + "','"
 							+ invprice + "','" + invdescription + "','" + invmaterial + "')";
-			System.out.println("SQL STATEMENT IS CURRENTLY:");
+			System.out.println("SQL STATEMENT :");
 			System.out.println(sql);
 			stmt.execute(sql);
 			
@@ -153,7 +150,7 @@ public class AddItemViewController extends Application{
 	}
 	
 	public String getDescription() {
-		String output = descriptionArea.getText();
+		String output = descriptionArea.getText();		
 		descriptionArea.clear();
 		return output;
 	}
@@ -162,10 +159,16 @@ public class AddItemViewController extends Application{
 		pictureField.setText(field);
 	}
 	
+	public String pictureFieldTrim(String input) {
+		String[] output = input.split("resources");
+		return output[1];
+	}
+	
 	public String getPictureField() {
 		String output = pictureField.getText();
+		String newoutput = pictureFieldTrim(output);
 		pictureField.clear();
-		return output;
+		return newoutput;
 	}
 
 	@Override

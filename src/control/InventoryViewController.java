@@ -71,7 +71,7 @@ public class InventoryViewController extends Application{
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/habitatsql", "root", "U3Z3aacoskOO55ndVAOf");
-			System.out.println("User View Connected to DB");
+			System.out.println("Inventory View Connected to DB");
 		} catch (Exception e) {
 			System.out.println(e);
 		}
@@ -100,8 +100,6 @@ public class InventoryViewController extends Application{
 				materialSB.append(rs.getString("inv_material") + "\n");
 				dimSB.append(rs.getString("inv_dimensions") + "\n");
 			}
-			System.out.println(idSB.toString());
-			//System.out.println(typeSB.toString());
 			setidText(idSB.toString());
 			settypeText(typeSB.toString());
 			setpriceText(priceSB.toString());

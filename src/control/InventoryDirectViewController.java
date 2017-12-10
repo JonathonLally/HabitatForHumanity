@@ -1,5 +1,6 @@
 package control;
 
+import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -8,6 +9,8 @@ import java.sql.SQLException;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 public class InventoryDirectViewController {
 	@FXML TextArea idArea;
@@ -17,6 +20,7 @@ public class InventoryDirectViewController {
 	@FXML TextArea materialArea;
 	@FXML TextArea descriptionArea;
 	@FXML TextField testfield;
+	@FXML ImageView imgView;
 	
 	private Connection con;
 	
@@ -42,6 +46,7 @@ public class InventoryDirectViewController {
 						setpriceArea(rs.getString("inv_price"));
 						setmaterialArea(rs.getString("inv_material"));
 						setdescriptionArea(rs.getString("inv_description"));
+						setPicture(rs.getString("inv_picture"));
 					} catch (Exception e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
@@ -52,6 +57,18 @@ public class InventoryDirectViewController {
 			e.printStackTrace();
 		}
 		
+	}
+	
+	public void setPicture(String input) {
+		try {
+			File file = new File("resources/" + input);
+			Image image = new Image(file.toURI().toString());
+			System.out.println(input);
+			imgView.setImage(image);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public void connectDB() {

@@ -12,23 +12,42 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class RemoveItemViewController extends Application{
-	@FXML private TextArea idArea;
-	@FXML private TextArea typeArea;
-	@FXML private TextArea descriptionArea;
-	@FXML private TextField removeField;
-	
-	@FXML public void remove() {
+public class RemoveItemViewController extends Application {
+	@FXML
+	private TextArea idArea;
+	@FXML
+	private TextArea typeArea;
+	@FXML
+	private TextArea descriptionArea;
+	@FXML
+	private TextField removeField;
+
+	@FXML
+	public void remove() {
+		connectDB();
+		removeChoice(getRemoveField());
+		fillFields();
+		disconnectDB();
 	}
-	
+
+	public void removeChoice(String remove) {
+		try {
+			con.createStatement().execute("DELETE FROM inventory WHERE inv_id = '" + remove + "'");				
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 			
+		
+	}
+
 	private Connection con;
-	
+
 	public void initialize() {
 		connectDB();
 		fillFields();
 		disconnectDB();
 	}
-	
+
 	public void connectDB() {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -38,7 +57,7 @@ public class RemoveItemViewController extends Application{
 			System.out.println(e);
 		}
 	}
-	
+
 	public void disconnectDB() {
 		try {
 			con.close();
@@ -52,17 +71,19 @@ public class RemoveItemViewController extends Application{
 		removeField.clear();
 		return output;
 	}
+
 	public void setIdArea(String input) {
 		idArea.setText(input);
 	}
-	
+
 	public void setTypeArea(String input) {
 		typeArea.setText(input);
 	}
+
 	public void setDescriptionArea(String input) {
 		descriptionArea.setText(input);
 	}
-	
+
 	public void fillFields() {
 		try {
 			Statement stmt = con.createStatement();
@@ -70,7 +91,7 @@ public class RemoveItemViewController extends Application{
 			StringBuilder ids = new StringBuilder();
 			StringBuilder types = new StringBuilder();
 			StringBuilder descriptions = new StringBuilder();
-			while(rs.next()) {
+			while (rs.next()) {
 				ids.append(rs.getInt("inv_id") + "\n");
 				types.append(rs.getString("inv_type") + "\n");
 				descriptions.append(rs.getString("inv_description") + "\n");
@@ -82,12 +103,11 @@ public class RemoveItemViewController extends Application{
 			e.printStackTrace();
 		}
 	}
-	
-	
+
 	@Override
 	public void start(Stage arg0) throws Exception {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }
