@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.InventoryViewController">
    <children>
-      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="640.0">
+      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="700.0">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
@@ -29,11 +29,23 @@
           </Menu>
         </menus>
       </MenuBar>
-      <TableView layoutX="127.0" layoutY="98.0" prefHeight="316.0" prefWidth="387.0">
-        <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
-        </columns>
-      </TableView>
+      <Button fx:id="allButton" layoutX="32.0" layoutY="70.0" mnemonicParsing="false" onAction="#sortAll" prefHeight="25.0" prefWidth="90.0" text="All" />
+      <Button fx:id="doorButton" layoutX="32.0" layoutY="125.0" mnemonicParsing="false" onAction="#sortDoors" prefHeight="25.0" prefWidth="90.0" text="Doors" />
+      <Button fx:id="windowButton" layoutX="32.0" layoutY="170.0" mnemonicParsing="false" onAction="#sortWindows" prefHeight="25.0" prefWidth="90.0" text="Windows" />
+      <Button fx:id="furnitureButton" layoutX="32.0" layoutY="215.0" mnemonicParsing="false" onAction="#sortFurniture" prefHeight="25.0" prefWidth="90.0" text="Furniture" />
+      <Button fx:id="electricalButton" layoutX="32.0" layoutY="260.0" mnemonicParsing="false" onAction="#sortElectrical" prefHeight="25.0" prefWidth="90.0" text="Electrical" />
+      <Button fx:id="plumbingButton" layoutX="32.0" layoutY="305.0" mnemonicParsing="false" onAction="#sortPlumbing" prefHeight="25.0" prefWidth="90.0" text="Plumbing" />
+      <Button fx:id="hardwareButton" layoutX="32.0" layoutY="350.0" mnemonicParsing="false" onAction="#sortHardware" prefHeight="25.0" prefWidth="90.0" text="Hardware" />
+      <Button fx:id="lightingButton" layoutX="32.0" layoutY="395.0" mnemonicParsing="false" onAction="#sortLighting" prefHeight="25.0" prefWidth="90.0" text="Lighting" />
+      <TextArea fx:id="idText" layoutX="147.0" layoutY="67.0" prefHeight="357.0" prefWidth="87.0" />
+      <TextArea fx:id="typeText" layoutX="234.0" layoutY="67.0" prefHeight="357.0" prefWidth="100.0" />
+      <TextArea fx:id="priceText" layoutX="334.0" layoutY="67.0" prefHeight="357.0" prefWidth="87.0" />
+      <TextArea fx:id="dimText" layoutX="508.0" layoutY="67.0" prefHeight="357.0" prefWidth="131.0" />
+      <TextArea fx:id="materialText" layoutX="421.0" layoutY="67.0" prefHeight="357.0" prefWidth="87.0" />
+      <Text layoutX="185.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID" />
+      <Text layoutX="271.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type" />
+      <Text layoutX="365.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price" />
+      <Text layoutX="443.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Material" />
+      <Text layoutX="543.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dimensions" />
    </children>
 </AnchorPane>

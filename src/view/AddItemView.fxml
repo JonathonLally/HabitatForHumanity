@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
@@ -43,12 +44,17 @@
             <Font size="16.0" />
          </font>
       </Text>
-      <Button layoutX="149.0" layoutY="449.0" mnemonicParsing="false" onAction="#addButton" prefHeight="25.0" prefWidth="78.0" text="Add" />
+      <Button layoutX="70.0" layoutY="424.0" mnemonicParsing="false" onAction="#addButton" prefHeight="25.0" prefWidth="78.0" text="Add" />
       <ChoiceBox fx:id="choicebox" layoutX="187.0" layoutY="90.0" prefWidth="150.0" />
       <TextField fx:id="dimField" layoutX="188.0" layoutY="194.0" />
       <TextField fx:id="priceField" layoutX="188.0" layoutY="247.0" />
       <TextField fx:id="matField" layoutX="188.0" layoutY="289.0" />
-      <TextArea fx:id="descriptionArea" layoutX="184.0" layoutY="337.0" prefHeight="86.0" prefWidth="150.0" />
-      <TextField fx:id="pictureField" layoutX="188.0" layoutY="141.0" />
+      <TextArea fx:id="descriptionArea" layoutX="184.0" layoutY="337.0" prefHeight="112.0" prefWidth="184.0" />
+      <TextField fx:id="pictureField" layoutX="188.0" layoutY="141.0" prefHeight="25.0" prefWidth="106.0" />
+      <ImageView fitHeight="33.0" fitWidth="34.0" layoutX="320.0" layoutY="137.0" onMouseClicked="#choosePictureFile" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/picture.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

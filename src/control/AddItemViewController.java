@@ -1,8 +1,8 @@
 package control;
 
+import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -13,6 +13,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 public class AddItemViewController extends Application{
@@ -23,18 +24,47 @@ public class AddItemViewController extends Application{
 	@FXML private TextField matField;
 	@FXML private TextArea descriptionArea;
 	@FXML private ChoiceBox<String> choicebox;
+	@FXML private Button pictureButton;
 	@FXML public void addButton() {
 		addInventory();
 	}
+	@FXML public void choosePictureFile() {
+		choosePicture();
+	}
 	
 	private Connection con;
+	private FileChooser filechooser;
 	
 	public void initialize() { //Inits
 		connectDB();
 		setupChoiceBox();
+		setupFileChooser();
 		disconnectDB();
 	}
 	
+	private void setupFileChooser() {
+		filechooser = new FileChooser();
+		
+	}
+
+	public void choosePicture() {
+		File file = filechooser.showOpenDialog(null);
+		if (file!=null) {
+			savePicture(file);
+		}
+	}
+	
+	private void savePicture(File file) {
+		System.out.println(file.getPath());
+		setPictureField(file.getPath());
+		try {
+			
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 	public void connectDB() {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -63,7 +93,7 @@ public class AddItemViewController extends Application{
 		System.out.println("Starting add Inventory");
 		connectDB();
 		String invtype = getChoiceBox();
-		String invpicture = "something"; //ADD picture function
+		String invpicture = getPictureField();
 		String invdimensions = getDimField();
 		String invprice = getPriceField();
 		String invdescription = getDescription();
@@ -130,6 +160,12 @@ public class AddItemViewController extends Application{
 	
 	public void setPictureField(String field) {
 		pictureField.setText(field);
+	}
+	
+	public String getPictureField() {
+		String output = pictureField.getText();
+		pictureField.clear();
+		return output;
 	}
 
 	@Override

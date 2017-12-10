@@ -63,14 +63,19 @@
                   <Insets bottom="200.0" />
                </GridPane.margin>
             </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Do Something" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sell Items" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets bottom="200.0" />
                </GridPane.margin>
             </Text>
-            <ImageView fitHeight="150.0" fitWidth="200.0" onMouseClicked="#launchAddItem" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER">
+            <ImageView fitHeight="150.0" fitWidth="200.0" onMouseClicked="#launchInventory" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER">
                <image>
                   <Image url="@../../resources/inventory.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="200.0" onMouseClicked="#launchSellItem" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@../../resources/94050-200.png" />
                </image>
             </ImageView>
          </children>
