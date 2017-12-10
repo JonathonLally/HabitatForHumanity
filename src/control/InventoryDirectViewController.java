@@ -5,7 +5,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -37,9 +36,6 @@ public class InventoryDirectViewController {
 			while(rs.next()) {
 				if (rs.getString("inv_id").equals(current)) {
 					try {
-						System.out.println("Found inv ID");
-						System.out.println(rs.getString("inv_id"));
-						System.out.println(rs.getString("inv_material"));
 						setidArea(rs.getString("inv_id"));
 						settypeArea(rs.getString("inv_type"));
 						setdimArea(rs.getString("inv_material"));
@@ -48,7 +44,6 @@ public class InventoryDirectViewController {
 						setdescriptionArea(rs.getString("inv_description"));
 						setPicture(rs.getString("inv_picture"));
 					} catch (Exception e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 				}
@@ -66,7 +61,6 @@ public class InventoryDirectViewController {
 			System.out.println(input);
 			imgView.setImage(image);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -75,7 +69,7 @@ public class InventoryDirectViewController {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/habitatsql", "root", "U3Z3aacoskOO55ndVAOf");
-			System.out.println("User View Connected to DB");
+			System.out.println("Direct View Connected to DB");
 		} catch (Exception e) {
 			System.out.println(e);
 		}
@@ -90,7 +84,6 @@ public class InventoryDirectViewController {
 	}
 	
 	public void setidArea(String input) {
-		System.out.println("Attempting to set ID Area to : " + input);
 		idArea.setText(input);
 	}
 	public void settypeArea(String input) {
@@ -108,12 +101,12 @@ public class InventoryDirectViewController {
 	public void setdescriptionArea(String input) {
 		descriptionArea.setText(input);
 	}
-	public void initData(String currentInv) {	
-		System.out.println(currentInv);
+	public void initData(String currentInv) {			
 		connectDB();
 		buildData(currentInv);
-		settypeArea("Testing");
 		disconnectDB();
 	}
+	
+	
 
 }

@@ -1,5 +1,6 @@
 package control;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -56,5 +57,9 @@ public class EmployeeViewController {
     @FXML void launchSellItem() {
     	
     }
+    
+    @FXML public void exit() {
+		Platform.exit();
+	}
 
 }

@@ -161,7 +161,10 @@ public class AddItemViewController extends Application{
 	
 	public String pictureFieldTrim(String input) {
 		String[] output = input.split("resources");
-		return output[1];
+		if (output[1] != null) {
+			return output[1];
+		}
+		return "";
 	}
 	
 	public String getPictureField() {

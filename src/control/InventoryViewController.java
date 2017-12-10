@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -191,14 +192,14 @@ public class InventoryViewController extends Application{
 		stage.show();
 		return stage;
 		
-	}
-	
-	
+	}	
 
 	@Override
 	public void start(Stage arg0) throws Exception {
-		// TODO Auto-generated method stub
 		
+	}
+	@FXML public void exit() {
+		Platform.exit();
 	}
 
 }
