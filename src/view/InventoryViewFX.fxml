@@ -47,5 +47,8 @@
       <Text layoutX="365.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price" />
       <Text layoutX="443.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Material" />
       <Text layoutX="543.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dimensions" />
+      <Button layoutX="471.0" layoutY="441.0" mnemonicParsing="false" onAction="#launchDirectInv" prefHeight="25.0" prefWidth="62.0" text="View" />
+      <Text layoutX="251.0" layoutY="458.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter ID:" />
+      <TextField fx:id="invChoice" layoutX="341.0" layoutY="441.0" prefHeight="25.0" prefWidth="100.0" />
    </children>
 </AnchorPane>

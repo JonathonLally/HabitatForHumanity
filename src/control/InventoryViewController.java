@@ -1,5 +1,6 @@
 package control;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -7,8 +8,12 @@ import java.sql.SQLException;
 
 import javafx.application.Application;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class InventoryViewController extends Application{
@@ -25,6 +30,7 @@ public class InventoryViewController extends Application{
 	@FXML TextArea priceText;
 	@FXML TextArea materialText;
 	@FXML TextArea dimText;
+	@FXML TextField invChoice;
 	@FXML public void sortAll() {
 		initialize();
 	}
@@ -48,6 +54,9 @@ public class InventoryViewController extends Application{
 	}
 	@FXML public void sortLighting() {
 		sortTable("Lighting");
+	}
+	@FXML public void launchDirectInv() {
+		showInventoryDirectView(getinvChoice());
 	}
 	
 	private Connection con;
@@ -158,6 +167,32 @@ public class InventoryViewController extends Application{
 	
 	public void setdimText(String input) {
 		dimText.setText(input);
+	}
+	
+	public String getinvChoice() {
+		String input = invChoice.getText();
+		invChoice.clear();
+		return input;
+	}
+	
+	public Stage showInventoryDirectView(String currentInv) { //Passing an argument to a controller
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/InventoryDirectView.fxml"));
+		Stage stage = new Stage();
+		 try {
+			stage.setScene(
+					    new Scene(
+					      (Pane) loader.load()
+					    )
+					  );
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		 InventoryDirectViewController controller = 
+				    loader.<InventoryDirectViewController>getController();
+				  controller.initialize(currentInv);
+		stage.show();
+		return stage;
+		
 	}
 	
 	
