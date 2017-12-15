@@ -76,6 +76,7 @@ public class MainViewController {
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/habitatsql", "root", "U3Z3aacoskOO55ndVAOf");
 		} catch (Exception e) {
 			System.out.println(e);
+			toInvalid_Text("Cannot connect to Database");
 		}
 	}
 
@@ -107,7 +108,7 @@ public class MainViewController {
 					System.out.println(user);
 					checkpassword(rs, userpass);
 				} else {
-					System.out.println("Username not found");
+					toInvalid_Text("Username not found");
 				}
 
 			}
@@ -167,7 +168,7 @@ public class MainViewController {
 			Parent root = FXMLLoader.load(getClass().getResource("/view/EmployeeViewFX.fxml"));
 			Scene scene = new Scene(root);
 			scene.getStylesheets().add(getClass().getResource("/view/material-fx-v0_3.css").toExternalForm());
-			secondaryStage.setTitle("CustomerView");
+			secondaryStage.setTitle("EmployeeView");
 			secondaryStage.setScene(scene);
 			secondaryStage.show();
 		} catch (Exception e) {

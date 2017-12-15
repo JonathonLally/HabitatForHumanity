@@ -13,9 +13,9 @@
          <children>
             <TextField fx:id="user_textfield" layoutX="137.0" layoutY="339.0" onAction="#user_login" prefHeight="25.0" prefWidth="175.0" promptText="user" />
             <PasswordField fx:id="password_passfield" layoutX="137.0" layoutY="397.0" onAction="#user_login" prefHeight="25.0" prefWidth="175.0" promptText="password" />
-            <ImageView fitHeight="278.0" fitWidth="333.0" layoutX="58.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="278.0" fitWidth="333.0" layoutX="67.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../resources/Habitat-favicon1.png" />
+                  <Image url="@resources/Habitat-favicon1.png" />
                </image>
             </ImageView>
             <Text fx:id="invalid_text" fill="#9a3333" layoutX="224.0" layoutY="463.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" ">

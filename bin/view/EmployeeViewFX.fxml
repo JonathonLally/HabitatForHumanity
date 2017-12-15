@@ -45,7 +45,7 @@
                </GridPane.margin></Text>
             <ImageView fitHeight="150.0" fitWidth="200.0" onMouseClicked="#launchAddItem" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <image>
-                  <Image url="@../../resources/additem.png" />
+                  <Image url="@resources/additem.png" />
                </image>
             </ImageView>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Add Items" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
@@ -55,7 +55,7 @@
             </Text>
             <ImageView fitHeight="150.0" fitWidth="200.0" onMouseClicked="#launchRemoveItem" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <image>
-                  <Image url="@../../resources/removeitem.png" />
+                  <Image url="@resources/removeitem.png" />
                </image>
             </ImageView>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="View Inventory" GridPane.halignment="CENTER">
@@ -70,12 +70,12 @@
             </Text>
             <ImageView fitHeight="150.0" fitWidth="200.0" onMouseClicked="#launchInventory" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER">
                <image>
-                  <Image url="@../../resources/inventory.png" />
+                  <Image url="@resources/inventory.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="150.0" fitWidth="200.0" onMouseClicked="#launchSellItem" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                <image>
-                  <Image url="@../../resources/94050-200.png" />
+                  <Image url="@resources/94050-200.png" />
                </image>
             </ImageView>
          </children>
