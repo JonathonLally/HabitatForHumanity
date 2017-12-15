@@ -56,7 +56,7 @@ public class InventoryDirectViewController {
 	
 	public void setPicture(String input) {
 		try {
-			File file = new File("resources/" + input);
+			File file = new File("src/view/resources/" + input);
 			Image image = new Image(file.toURI().toString());
 			System.out.println(input);
 			imgView.setImage(image);

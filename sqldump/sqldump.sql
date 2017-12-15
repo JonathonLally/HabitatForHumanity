@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `habitatsql` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `habitatsql`;
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
 -- Host: localhost    Database: habitatsql
@@ -33,7 +35,7 @@ CREATE TABLE `inventory` (
   `inv_material` varchar(45) DEFAULT NULL COMMENT 'What it''s made of',
   PRIMARY KEY (`inv_id`),
   UNIQUE KEY `inv_id_UNIQUE` (`inv_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8 COMMENT='Stores inventory of habitat humanity project';
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8 COMMENT='Stores inventory of habitat humanity project';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +44,7 @@ CREATE TABLE `inventory` (
 
 LOCK TABLES `inventory` WRITE;
 /*!40000 ALTER TABLE `inventory` DISABLE KEYS */;
-INSERT INTO `inventory` VALUES (13,'Door','door.jpg','60\" x 12\"',NULL,'$30','A wooden door','Wood'),(16,'Door','door1.jpg','68\" x 120\"',NULL,'$80','Dual glass doors','Wood+Glass'),(17,'Door','door2.JPG','60\"x24\"',NULL,'$25','Interior Door','Wood'),(18,'Door','door3.jpg','80\" x 36\"',NULL,'$20','Discount door','Wood'),(19,'Door','door4.JPG','80\"x36\"',NULL,'$30','White wood door','Wood'),(20,'Door','door5.jpg','92\"x66\"',NULL,'$50','Old bank door','Metal + Wood'),(21,'Door','door6.jpg','80\"x36\"',NULL,'$40','Rustic cabin wood door','Wood'),(22,'Electrical','electical1.jpg','6 Guage',NULL,'$80','6 GA copper wire','Copper'),(23,'Electrical','electical2.jpg','6\"x2\"',NULL,'$5','Light switch','Plastic+Metal'),(24,'Furniture','furniture1.jpg','32\"x 80\"',NULL,'$60','Sofa','Wood'),(25,'Furniture','furniture2.jpg','48\"x 32\"',NULL,'$40','A nice chair','Wood'),(26,'Plumbing','	oilet1.jpg','48\"x32\"',NULL,'$100','A new white toilet','Poreclain'),(29,'Window','window1.jpg','80\"x48\"',NULL,'$40','New window','Glass'),(30,'Window','window2.jpg','62\"x48\"',NULL,'$40','Window','Glass'),(31,'Lighting','lights.jpg','12\"',NULL,'$15','Set of 6 lights','na'),(33,'Plumbing','pipe.jpg','6\"',NULL,'$5','PVC','PVC'),(34,'Hardware','hardware1.jpg','6\"',NULL,'$5','Hardware','Steel');
+INSERT INTO `inventory` VALUES (13,'Door','door.jpg','60\" x 12\"',NULL,'$30','A wooden door','Wood'),(16,'Door','door1.jpg','68\" x 120\"',NULL,'$80','Dual glass doors','Wood+Glass'),(17,'Door','door2.JPG','60\"x24\"',NULL,'$25','Interior Door','Wood'),(18,'Door','door3.jpg','80\" x 36\"',NULL,'$20','Discount door','Wood'),(19,'Door','door4.JPG','80\"x36\"',NULL,'$30','White wood door','Wood'),(20,'Door','door5.jpg','92\"x66\"',NULL,'$50','Old bank door','Metal + Wood'),(21,'Door','door6.jpg','80\"x36\"',NULL,'$40','Rustic cabin wood door','Wood'),(22,'Electrical','electical1.jpg','6 Guage',NULL,'$80','6 GA copper wire','Copper'),(23,'Electrical','electical2.jpg','6\"x2\"',NULL,'$5','Light switch','Plastic+Metal'),(24,'Furniture','furniture1.jpg','32\"x 80\"',NULL,'$60','Sofa','Wood'),(25,'Furniture','furniture2.jpg','48\"x 32\"',NULL,'$40','A nice chair','Wood'),(26,'Plumbing','	oilet1.jpg','48\"x32\"',NULL,'$100','A new white toilet','Poreclain'),(29,'Window','window1.jpg','80\"x48\"',NULL,'$40','New window','Glass'),(30,'Window','window2.jpg','62\"x48\"',NULL,'$40','Window','Glass'),(31,'Lighting','lights.jpg','12\"',NULL,'$15','Set of 6 lights','na'),(33,'Plumbing','pipe.jpg','6\"',NULL,'$5','PVC','PVC'),(34,'Hardware','hardware1.jpg','6\"',NULL,'$5','Hardware','Steel'),(35,'Hardware','screws.jpg','2\"',NULL,'$2','Pack of screws','Metal');
 /*!40000 ALTER TABLE `inventory` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -60,7 +62,7 @@ CREATE TABLE `users` (
   `user_type` int(11) NOT NULL DEFAULT '1' COMMENT 'level of account 1 - customer, 2 - employee 3 - manager',
   PRIMARY KEY (`user_idnum`),
   UNIQUE KEY `user_idnum_UNIQUE` (`user_idnum`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COMMENT='user list for habitat project';
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COMMENT='user list for habitat project';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -69,7 +71,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'customer','password',1),(2,'employee','password',2),(3,'manager','password',3),(8,'usertest','hunter2',1),(9,'anothertest','pw',2);
+INSERT INTO `users` VALUES (1,'customer','password',1),(2,'employee','password',2),(3,'manager','password',3),(9,'anothertest','pw',2),(10,'admin','password',3);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -82,4 +84,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-12-13 15:16:04
+-- Dump completed on 2017-12-15 10:53:57
