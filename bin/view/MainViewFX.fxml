@@ -23,9 +23,6 @@
                   <Font size="10.0" />
                </font>
             </Text>
-            <Button layoutX="58.0" layoutY="501.0" mnemonicParsing="false" onAction="#launchCustomerViewFXML" text="TEST CUSTOMER" />
-            <Button layoutX="185.0" layoutY="501.0" mnemonicParsing="false" onAction="#launchEmployeeViewFXML" text="TEST Employee" />
-            <Button layoutX="323.0" layoutY="501.0" mnemonicParsing="false" onAction="#launchManagerViewFXML" text="Test Manager" />
          </children>
       </Pane>
    </children>

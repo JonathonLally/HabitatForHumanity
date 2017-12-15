@@ -53,7 +53,7 @@
       <TextField fx:id="pictureField" layoutX="188.0" layoutY="141.0" prefHeight="25.0" prefWidth="106.0" />
       <ImageView fitHeight="33.0" fitWidth="34.0" layoutX="320.0" layoutY="137.0" onMouseClicked="#choosePictureFile" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../resources/picture.png" />
+            <Image url="@resources/picture.png" />
          </image>
       </ImageView>
    </children>
